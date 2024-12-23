@@ -67,7 +67,7 @@ class _AppMainViewState extends State<AppMainView> {
                 label: 'Dates'),
           ],
       ),
-      body: screens[currentIndex],
+     // body: screens[currentIndex],
     );
   }
 }
