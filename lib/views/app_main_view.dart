@@ -27,13 +27,13 @@ class _AppMainViewState extends State<AppMainView> {
         : ImageIcon(AssetImage('assets/images/home/$imageNAme'));
   }
 
-  List<Widget>screens=[
+/*  List<Widget>screens=[
     const QuranView(),
     const HadithView(),
     const SibhaView(),
     const RadioView(),
     const DatedView(),
-  ];
+  ];*/
 
   @override
   Widget build(BuildContext context) {
