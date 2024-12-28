@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami/utils/constants.dart';
 
 class HadithView extends StatelessWidget {
   const HadithView({super.key});
@@ -11,7 +10,7 @@ class HadithView extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                 image: DecorationImage(image: AssetImage('assets/images/home/hadithbg.png'),fit: BoxFit.contain)
             ),
           ),

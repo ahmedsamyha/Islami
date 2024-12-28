@@ -8,11 +8,16 @@ class Assets {
   static const String homeDatedbg = 'assets/images/home/datedbg.png';
   static const String homeHadithbg = 'assets/images/home/hadithbg.png';
   static const String homeLast0 = 'assets/images/home/last0.png';
+  static const String homeLogo = 'assets/images/home/Logo.svg';
+  static const String homeLogoBack = 'assets/images/home/logo_back.svg';
+  static const String homeLogoBack2 = 'assets/images/home/logo_back2.png';
   static const String homeQuran0 = 'assets/images/home/quran0.png';
   static const String homeRadio0 = 'assets/images/home/radio0.png';
   static const String homeRadiobg = 'assets/images/home/radiobg.png';
   static const String homeSebha0 = 'assets/images/home/sebha0.png';
   static const String homeSibhabg = 'assets/images/home/sibhabg.png';
+  static const String homeStar = 'assets/images/home/star.svg';
+  static const String homeSura = 'assets/images/home/sura.png';
   static const String onBoardingBoardingHeader = 'assets/images/on_boarding/boarding_header.png';
   static const String onBoardingFrame02 = 'assets/images/on_boarding/frame02.png';
   static const String onBoardingFrame03 = 'assets/images/on_boarding/frame03.png';
