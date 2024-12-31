@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^2.0.16
   google_fonts: ^6.2.1
   introduction_screen: ^3.1.14
+  card_swiper: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +67,7 @@ flutter:
     - assets/images/splash/
     - assets/images/on_boarding/
     - assets/images/home/
+    - assets/files/suras/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

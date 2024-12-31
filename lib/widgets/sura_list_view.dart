@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/utils/sura_name.dart';
+import 'package:islami/views/sura_detils.dart';
 import 'package:islami/widgets/sura_list_item.dart';
 
 import '../utils/constants.dart';
@@ -17,6 +18,9 @@ class SuraListView extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) => SuraListItem(
                 suraModel: SuraModel.getSuraModel(index),
+            onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SuraDetails(suraAr: SuraModel.getSuraModel(index).suraNameAr,suraEn: SuraModel.getSuraModel(index).suraNameEn,suraNumber: SuraModel.getSuraModel(index).suraNumber)));
+            },
               ),
           separatorBuilder: (context, index) => const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 64, vertical: 10),
