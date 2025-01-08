@@ -3,7 +3,6 @@ import 'package:islami/utils/constants.dart';
 
 import '../widgets/most_recently_list_view.dart';
 import '../widgets/search_list_view.dart';
-import '../widgets/sura_list_item.dart';
 import '../widgets/sura_list_view.dart';
 import '../widgets/top_header_logo.dart';
 import '../utils/model.dart';

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/utils/model.dart';
-import 'package:islami/utils/sura_name.dart';
 import 'package:islami/views/sura_detils.dart';
 
-import '../views/hadith_details_view.dart';
 import 'most_recently_item.dart';
 
 class MostRecentlyListView extends StatelessWidget {

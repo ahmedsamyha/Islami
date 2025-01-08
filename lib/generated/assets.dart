@@ -2,10 +2,13 @@
 class Assets {
   Assets._();
 
+  static const String assetsFilesAhadeth = 'assets/files/ahadeth.txt';
+  static const String filesAhadeth = 'assets/files/ahadeth.txt';
   static const String fontsJannaLtBold = 'assets/fonts/janna-lt-bold.ttf';
   static const String homeBackground = 'assets/images/home/background.png';
   static const String homeBook0 = 'assets/images/home/book0.png';
   static const String homeDatedbg = 'assets/images/home/datedbg.png';
+  static const String homeHadithback = 'assets/images/home/hadithback.png';
   static const String homeHadithbg = 'assets/images/home/hadithbg.png';
   static const String homeLast0 = 'assets/images/home/last0.png';
   static const String homeLogo = 'assets/images/home/Logo.svg';

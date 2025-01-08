@@ -78,6 +78,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: ListView.separated(
+                    physics: const BouncingScrollPhysics(),
                       itemBuilder: (context, index) => Container(
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
@@ -99,7 +100,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                                             fontWeight: FontWeight.w700,
                                             fontSize: 20)),
                                     TextSpan(
-                                        text: '[$index]',
+                                        text: '[${index+1}] ',
                                         style: const TextStyle(
                                             color: AppColors.kPrimaryColor,
                                             fontWeight: FontWeight.w700,

@@ -1,14 +1,56 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:islami/utils/constants.dart';
+import 'package:islami/utils/hadith_model.dart';
+import 'package:islami/views/hadith_details_view.dart';
+import 'package:islami/widgets/hadith_item.dart';
 import 'package:islami/widgets/top_header_logo.dart';
 
-class HadithView extends StatelessWidget {
-  const HadithView({super.key});
+class HadithView extends StatefulWidget {
+  const HadithView({Key? key}) : super(key: key);
+
+  @override
+  _HadithViewState createState() => _HadithViewState();
+}
+
+class _HadithViewState extends State<HadithView> {
+  List<HadithModel> allAhadith = [];
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    loadHadithFile();
+  }
+
+  void loadHadithFile() async {
+    try {
+      String fileContent =
+          await rootBundle.loadString('assets/files/ahadeth.txt');
+      List<String> ahadith = fileContent.split("#");
+
+      List<HadithModel> loadedAhadith = ahadith.map((data) {
+        List<String> lines = data.trim().split('\n');
+        String title = lines[0];
+        lines.removeAt(0);
+        return HadithModel(title: title, content: lines);
+      }).toList();
+
+      setState(() {
+        allAhadith = loadedAhadith;
+        isLoading = false;
+      });
+    } catch (error) {
+      print(error);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+
     return Stack(
       children: [
         Column(
@@ -16,9 +58,11 @@ class HadithView extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/home/hadithbg.png'),
-                        fit: BoxFit.contain)),
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/home/hadithbg.png'),
+                    fit: BoxFit.contain,
+                  ),
+                ),
               ),
             ),
             SizedBox(
@@ -27,53 +71,37 @@ class HadithView extends StatelessWidget {
           ],
         ),
         const TopHeaderLogo(),
-        Positioned(
-          bottom: 20,
-          left: width * .09,
-          child: Container(
-            height: height * .65,
-            width: width * .82,
-            decoration: BoxDecoration(
-                color: AppColors.kPrimaryColor,
-                borderRadius: BorderRadius.circular(20)),
-            child: Column(
-
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8 , vertical: 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset('assets/images/home/maskleft.png' , color: AppColors.kBlackColor,),
-                      SizedBox(
-                        width: width*.3,
-                          child: Text('الحديث الأول',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700,color: AppColors.kBlackColor),)),
-
-                      Image.asset('assets/images/home/maskright.png',color: AppColors.kBlackColor,),
-                    ],
+        isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : allAhadith.isEmpty
+                ? const Center(
+                    child: Text(
+                      "No Hadiths available.",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  )
+                : Swiper(
+                    itemBuilder: (BuildContext context, int index) {
+                      return HadithItem(
+                        allAhadith: allAhadith[index],
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HadithDetailsView(
+                                      title: allAhadith[index].title,
+                                      content:
+                                          allAhadith[index].content.first)));
+                        },
+                      );
+                    },
+                    itemCount: allAhadith.length,
+                    physics: const BouncingScrollPhysics(),
+                    loop: false,
+                    viewportFraction: 0.8,
+                    scale: .9,
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    ' عن أمـيـر المؤمنـين أبي حـفص عمر بن الخطاب رضي الله عنه ، قال : سمعت رسول الله صلى الله عـليه وسلم يـقـول : ( إنـما الأعـمـال بالنيات وإنـمـا لكـل امـرئ ما نـوى . فمن كـانت هجرته إلى الله ورسولـه فهجرتـه إلى الله ورسـوله ومن كانت هجرته لـدنيا يصـيبها أو امرأة ينكحها فهجرته إلى ما هاجر إليهرواه إمام المحد ثين أبـو عـبـد الله محمد بن إسماعـيل بن ابراهـيـم بن المغـيره بن بـرد زبه البخاري الجعـفي،[رقم:1] وابـو الحسـيـن مسلم بن الحجاج بن مـسلم القـشـيري الـنيسـابـوري [رقم :1907] رضي الله عنهما في صحيحيهما اللذين هما أصح الكتب المصنفه'
-                    ,style: TextStyle(height :1, fontSize: 16,fontWeight: FontWeight.w700,color: AppColors.kBlackColor),),
-                ),
-                const Spacer(),
-                ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20)),
-                    child: Image.asset(
-                      'assets/images/home/maskbottom.png',
-                      width: width * .8,
-                    ))
-              ],
-            ),
-          ),
-        ),
-
       ],
     );
   }

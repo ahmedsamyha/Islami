@@ -68,6 +68,7 @@ flutter:
     - assets/images/on_boarding/
     - assets/images/home/
     - assets/files/suras/
+    - assets/files/ahadeth.txt
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

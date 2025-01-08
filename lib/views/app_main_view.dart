@@ -29,7 +29,7 @@ class _AppMainViewState extends State<AppMainView> {
 
   List<Widget> screens = [
     const QuranView(),
-    const HadithView(),
+    HadithView(),
     const SibhaView(),
     const RadioView(),
     const DatedView(),

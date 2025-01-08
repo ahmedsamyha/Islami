@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami/utils/sura_name.dart';
 import 'package:islami/views/sura_detils.dart';
 import 'package:islami/widgets/sura_list_item.dart';
 
