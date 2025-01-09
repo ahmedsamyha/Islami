@@ -3,6 +3,7 @@ class Assets {
   Assets._();
 
   static const String assetsFilesAhadeth = 'assets/files/ahadeth.txt';
+  static const String assetsImagesSebha = 'assets/images/sebha.png';
   static const String filesAhadeth = 'assets/files/ahadeth.txt';
   static const String fontsJannaLtBold = 'assets/fonts/janna-lt-bold.ttf';
   static const String homeBackground = 'assets/images/home/background.png';
@@ -24,6 +25,13 @@ class Assets {
   static const String homeSibhabg = 'assets/images/home/sibhabg.png';
   static const String homeStar = 'assets/images/home/star.svg';
   static const String homeSura = 'assets/images/home/sura.png';
+  static const String imagesMask = 'assets/images/mask.png';
+  static const String imagesSebha = 'assets/images/sebha.png';
+  static const String imagesSebha0 = 'assets/images/sebha0.svg';
+  static const String imagesSebha1 = 'assets/images/sebha1.svg';
+  static const String imagesSebhabody = 'assets/images/sebhabody.svg';
+  static const String imagesSebhabody11 = 'assets/images/sebhabody11.png';
+  static const String imagesSebhatop = 'assets/images/sebhatop.svg';
   static const String onBoardingBoardingHeader = 'assets/images/on_boarding/boarding_header.png';
   static const String onBoardingFrame02 = 'assets/images/on_boarding/frame02.png';
   static const String onBoardingFrame03 = 'assets/images/on_boarding/frame03.png';

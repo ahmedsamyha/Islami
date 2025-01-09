@@ -45,7 +45,7 @@ class HadithItem extends StatelessWidget {
                             color: AppColors.kBlackColor,
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Expanded(
                           child: Image.asset(
                             'assets/images/home/maskright.png',

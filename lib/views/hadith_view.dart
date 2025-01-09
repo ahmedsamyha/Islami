@@ -1,14 +1,13 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami/utils/constants.dart';
 import 'package:islami/utils/hadith_model.dart';
 import 'package:islami/views/hadith_details_view.dart';
 import 'package:islami/widgets/hadith_item.dart';
 import 'package:islami/widgets/top_header_logo.dart';
 
 class HadithView extends StatefulWidget {
-  const HadithView({Key? key}) : super(key: key);
+  const HadithView({super.key});
 
   @override
   _HadithViewState createState() => _HadithViewState();
