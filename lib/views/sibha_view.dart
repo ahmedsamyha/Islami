@@ -67,28 +67,28 @@ class _SibhaViewState extends State<SibhaView> {
                     child: SvgPicture.asset('assets/images/sebhabody.svg'),
                   ),
                   Positioned(
-                    top: height * .24,
+                    top: height * .26,
                     left: width * .2,
                     right: width * .2,
                     child: Text(
                       textAlign: TextAlign.center,
                       word,
-                      style: const TextStyle(
+                      style:  TextStyle(
                           color: AppColors.kWhiteColor,
                           fontWeight: FontWeight.w700,
-                          fontSize: 36),
+                          fontSize:height*.06 ),
                     ),
                   ),
                   Positioned(
-                    top: height * .32,
+                    top: height * .36,
                     left: width * .45,
                     child: Text(
                       textAlign: TextAlign.center,
                       num.toString(),
-                      style: const TextStyle(
+                      style:  TextStyle(
                           color: AppColors.kWhiteColor,
                           fontWeight: FontWeight.w700,
-                          fontSize: 36),
+                          fontSize: height*.06 ),
                     ),
                   )
                 ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:islami/utils/chash_helper.dart';
+import 'package:islami/views/app_main_view.dart';
 import 'package:islami/views/on_boarding_view.dart';
 
 class SplashView extends StatefulWidget {
@@ -13,7 +15,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3),() {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const OnBoardingView()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>CashHelper.getEligibility()==true?const AppMainView():const OnBoardingView() ));
     },);
     super.initState();
   }

@@ -15,7 +15,7 @@ class MostRecentlyListView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 20),
       child: SizedBox(
-        height: height * .17,
+        height: height * .20,
         child: ListView.separated(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,

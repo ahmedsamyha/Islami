@@ -1,3 +1,4 @@
+
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,7 +27,7 @@ class _HadithViewState extends State<HadithView> {
   void loadHadithFile() async {
     try {
       String fileContent =
-          await rootBundle.loadString('assets/files/ahadeth.txt');
+      await rootBundle.loadString('assets/files/ahadeth.txt');
       List<String> ahadith = fileContent.split("#");
 
       List<HadithModel> loadedAhadith = ahadith.map((data) {
@@ -59,7 +60,7 @@ class _HadithViewState extends State<HadithView> {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/home/hadithbg.png'),
-                    fit: BoxFit.contain,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
@@ -73,34 +74,34 @@ class _HadithViewState extends State<HadithView> {
         isLoading
             ? const Center(child: CircularProgressIndicator())
             : allAhadith.isEmpty
-                ? const Center(
-                    child: Text(
-                      "No Hadiths available.",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  )
-                : Swiper(
-                    itemBuilder: (BuildContext context, int index) {
-                      return HadithItem(
-                        allAhadith: allAhadith[index],
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HadithDetailsView(
-                                      title: allAhadith[index].title,
-                                      content:
-                                          allAhadith[index].content.first)));
-                        },
-                      );
-                    },
-                    itemCount: allAhadith.length,
-                    physics: const BouncingScrollPhysics(),
-                    loop: false,
-                    viewportFraction: 0.8,
-                    scale: .9,
-                  ),
+            ? const Center(
+          child: Text(
+            "No Hadiths available.",
+            style:
+            TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        )
+            : Swiper(
+          itemBuilder: (BuildContext context, int index) {
+            return HadithItem(
+              allAhadith: allAhadith[index],
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HadithDetailsView(
+                            title: allAhadith[index].title,
+                            content:
+                            allAhadith[index].content.first)));
+              },
+            );
+          },
+          itemCount: allAhadith.length,
+          physics: const BouncingScrollPhysics(),
+          loop: false,
+          viewportFraction: 0.8,
+          scale: .9,
+        ),
       ],
     );
   }

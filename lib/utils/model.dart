@@ -377,3 +377,10 @@ class SuraModel {
 
 
 
+class DatedModel{
+   final String name;
+   final String time;
+   final String aP;
+
+  DatedModel({required this.name, required this.time, required this.aP});
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:islami/utils/chash_helper.dart';
 import 'package:islami/utils/constants.dart';
 import 'package:islami/views/app_main_view.dart';
 
@@ -37,6 +38,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     return IntroductionScreen(
       globalBackgroundColor: AppColors.kBlackColor,
       onDone: () {
+        CashHelper.saveEligibility();
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const AppMainView()));
       },
       done: const Text("Finish",

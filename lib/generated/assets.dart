@@ -25,7 +25,12 @@ class Assets {
   static const String homeSibhabg = 'assets/images/home/sibhabg.png';
   static const String homeStar = 'assets/images/home/star.svg';
   static const String homeSura = 'assets/images/home/sura.png';
+  static const String imagesAzkar11 = 'assets/images/azkar11.png';
+  static const String imagesAzkar22 = 'assets/images/azkar22.png';
+  static const String imagesBarygrediant = 'assets/images/barygrediant.png';
+  static const String imagesHomeMaskbottom = 'assets/images/home/maskbottom.png';
   static const String imagesMask = 'assets/images/mask.png';
+  static const String imagesParbg = 'assets/images/parbg.png';
   static const String imagesSebha = 'assets/images/sebha.png';
   static const String imagesSebha0 = 'assets/images/sebha0.svg';
   static const String imagesSebha1 = 'assets/images/sebha1.svg';

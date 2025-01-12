@@ -69,7 +69,7 @@ class HadithItem extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: height * .31,
+            top: height * .28,
             left: width * .08,
             right: width*.08,
             child: SizedBox(
