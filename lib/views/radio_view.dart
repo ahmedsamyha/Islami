@@ -51,7 +51,7 @@ class _RadioViewState extends State<RadioView> {
               AppColors.kPrimaryColor,
             ],
             inactiveBgColor: AppColors.kBlackColor.withOpacity(.7),
-            labels: ['Radio', 'Reciters'],
+            labels: const ['Radio', 'Reciters'],
             changeOnTap:true ,
             onToggle: (index) {
               print('switched to: $index');
@@ -59,7 +59,7 @@ class _RadioViewState extends State<RadioView> {
             },
           ),
           currentIndex == 0
-              ? Expanded(child: ListView.separated(itemBuilder: (context,index)=>RadioItem(name: radioList[index],), separatorBuilder: (context,index)=>SizedBox(height: 16,), itemCount: 8))
+              ? Expanded(child: ListView.separated(itemBuilder: (context,index)=>RadioItem(name: radioList[index],), separatorBuilder: (context,index)=>const SizedBox(height: 16,), itemCount: 8))
               : const Text(
                   'Radio222222',
                   style: TextStyle(color: Colors.white),
